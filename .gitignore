@@ -1,0 +1,7 @@
+notas.txt
+.qodo/
+db.sqlite3
+env/
+__pycache__/
+migrations/
+*.pyc
