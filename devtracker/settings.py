@@ -41,6 +41,16 @@ INSTALLED_APPS = [
     'core',
 ]
 
+ASGI_APPLICATION = 'devtracker.asgi.application'
+
+CHANNEL_LAYERS = {
+    'default': {
+        'BACKEND': 'channels_redis.core.RedisChannelLayer',
+        'CONFIG': {
+            "hosts": [('127.0.0.1', 6379)],
+        },
+    },
+}
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -70,7 +80,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'devtracker.wsgi.application'
-
 
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
